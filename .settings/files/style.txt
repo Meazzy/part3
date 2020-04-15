@@ -1,0 +1,9 @@
+Normes de programmation.
+
+ Les identificateurs doivent être en français.
+ Les noms de variables doivent être en lettres minuscules, sauf s’ils contiennent plusieurs mots.
+ Il y a toujour un espece entre les signes et le lettres par exemple (1+1)----> (1 + 1).
+ La ligne maximale pour l'indentation est de 120.
+ Les commentaires sont identifier par //.
+ Toutes les variables commencent par une minuscule sauf celle qui sont longues.
+ Le projet en entier doit etre indenter avec un CTRL + ALT + F.
