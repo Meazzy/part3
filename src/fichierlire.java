@@ -1,6 +1,14 @@
 import java.io.BufferedReader;
+import java.io.Console;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class fichierlire {
 
@@ -33,14 +41,34 @@ public class fichierlire {
 
 					nb = commande2.prixTotal(Integer.parseInt(pair[qt02]), pair[plats02])
 							+ commande3.prixTotal(Integer.parseInt(pair[qt03]), pair[plats03]);
-
 					commande1.afficher();
 					commande2.modif(nb);
 					commande2.affichernv();
 					commande3.setClient(pair[4]);
 					commande2.modif(0);
 
-					commande3.affichernv();
+					try {
+
+						Date actuelle = new Date();
+						DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+
+						File out = new File("files/java.txt");
+						out.renameTo(new File("files/Facture_du_" + dateFormat.format(actuelle)));
+
+						PrintStream myconsole = new PrintStream(new File("files/java.txt"));
+						System.setOut(myconsole);
+						System.out.println("Bienvenue chez Barette!" + "\n" + "Factures : " + "\n");
+						commande1.afficher();
+						commande2.modif(nb);
+						commande2.affichernv();
+						commande3.setClient(pair[4]);
+						commande2.modif(0);
+
+						//commande3.affichernv();
+
+					} catch (FileNotFoundException fx) {
+						System.out.println(fx);
+					}
 
 				} else if (pair[commande01].equals(pair[commande02])) {
 					double nb = 0;
@@ -53,17 +81,60 @@ public class fichierlire {
 
 					commande2.setClient(pair[3]);
 					commande2.modif(0);
-					commande2.affichernv();
+					//commande2.affichernv();
 
 					commande3.afficher();
 
-				} else {
+					try {
 
+						Date actuelle = new Date();
+						DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+
+						File out = new File("files/java.txt");
+						out.renameTo(new File("files/Facture_du_" + dateFormat.format(actuelle)));
+
+						PrintStream myconsole = new PrintStream(new File("files/java.txt"));
+						System.setOut(myconsole);
+						System.out.println("Bienvenue chez Barette!" + "\n" + "Factures : " + "\n");
+
+						commande1.modif(nb);
+						commande1.affichernv();
+
+						commande2.setClient(pair[3]);
+						commande2.modif(0);
+						//commande2.affichernv();
+
+						commande3.afficher();
+
+					} catch (FileNotFoundException fx) {
+						System.out.println(fx);
+					}
+
+				} else {
 					commande1.afficher();
 					commande2.afficher();
 					commande3.afficher();
+					try {
+
+						Date actuelle = new Date();
+						DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+
+						File out = new File("files/java.txt");
+						out.renameTo(new File("files/Facture_du_" + dateFormat.format(actuelle)));
+
+						PrintStream myconsole = new PrintStream(new File("files/java.txt"));
+						System.setOut(myconsole);
+						System.out.println("Bienvenue chez Barette!" + "\n" + "Factures : " + "\n");
+						commande1.afficher();
+						commande2.afficher();
+						commande3.afficher();
+
+					} catch (FileNotFoundException fx) {
+						System.out.println(fx);
+					}
 
 				}
+
 			}
 
 			// Message d'erreur si le fichier de respecte pas les memes normes que
@@ -79,6 +150,6 @@ public class fichierlire {
 
 	public void doSomething() {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

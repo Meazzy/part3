@@ -50,7 +50,7 @@
 			break;
 		}
 
-		prixTot = prix * qnt;
+		prixTot = (prix * qnt)*(1.15);
 
 		return prixTot ;
 	}

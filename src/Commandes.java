@@ -2,6 +2,9 @@ import java.text.DecimalFormat;
 
 public class Commandes {
 
+	public  double TVS = 5.0;
+	public  double TVQ = 9.975;
+	
 	public String client;
 	public String plats;
 	public int quantite;
@@ -26,11 +29,13 @@ public class Commandes {
 		this.client = client;
 
 	}
+	
+
 
 	public double prixTotal(int quantite, String plats) {
 		double prix = 0;
 		double totale;
-
+		
 		switch (plats) {
 
 		case "Poutine":
@@ -44,11 +49,17 @@ public class Commandes {
 			break;
 		}
 
-		totale = prix * quantite;
+		totale = (prix * quantite);
 
+		TVQ = (totale * TVQ) /100;
+		TVS = (totale * TVS) /100;
+		
+		totale = totale*1.14975;
+		
 		return totale;
 	}
-
+	
+	
 	public double modif(double nul) {
 
 		tot = nul;
@@ -62,7 +73,7 @@ public class Commandes {
 		df.setMinimumFractionDigits(2);
 		df.setDecimalSeparatorAlwaysShown(true);
 
-		System.out.print(this.client + "\t" + df.format(prixTotal(quantite, plats)) + "$" + "\n");
+		System.out.print(this.client + "\t" + df.format(prixTotal(quantite, plats)) + "$ taxes incluses" +"\n");
 
 	}
 
@@ -73,7 +84,7 @@ public class Commandes {
 		df.setMinimumFractionDigits(2);
 		df.setDecimalSeparatorAlwaysShown(true);
 
-		System.out.print(this.client + "\t" + df.format(modif(tot)) + "$" + "\n");
+		System.out.print(this.client + "\t" + df.format(modif(tot)) + "$ taxes incluses" + "\n");
 
 	}
 }
