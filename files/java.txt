@@ -1,6 +1,8 @@
 Bienvenue chez Barette!
 Factures : 
 
-Roger	12,07$ taxes incluses
 Mehdi	5,75$ taxes incluses
-Mehdi	18,11$ taxes incluses
+Roger	18,11$ taxes incluses
+
+ Les erreurs sont : 
+Mehdi	0,00$ taxes incluses

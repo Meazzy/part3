@@ -36,6 +36,9 @@ public class fichierlire {
 				Commandes commande2 = new Commandes(pair[commande02], pair[plats02], Integer.parseInt(pair[qt02]));
 				Commandes commande3 = new Commandes(pair[commande03], pair[plats03], Integer.parseInt(pair[qt03]));
 
+				if (Integer.parseInt(pair[qt01]) == 0) {
+
+				}
 				if (pair[commande02].equals(pair[commande03])) {
 					double nb = 0;
 
@@ -43,10 +46,13 @@ public class fichierlire {
 							+ commande3.prixTotal(Integer.parseInt(pair[qt03]), pair[plats03]);
 					commande1.afficher();
 					commande2.modif(nb);
-					commande2.affichernv();
+					commande2.afficher();
 					commande3.setClient(pair[4]);
 					commande2.modif(0);
 
+					commande1.afficherErreur();
+					commande2.afficherErreur();
+					commande3.afficherErreur();
 					try {
 
 						Date actuelle = new Date();
@@ -60,12 +66,15 @@ public class fichierlire {
 						System.out.println("Bienvenue chez Barette!" + "\n" + "Factures : " + "\n");
 						commande1.afficher();
 						commande2.modif(nb);
-						commande2.affichernv();
+						commande2.afficher();
 						commande3.setClient(pair[4]);
 						commande2.modif(0);
 
-						//commande3.affichernv();
+						commande3.afficher();
 
+						commande1.afficherErreur();
+						commande2.afficherErreur();
+						commande3.afficherErreur();
 					} catch (FileNotFoundException fx) {
 						System.out.println(fx);
 					}
@@ -77,14 +86,17 @@ public class fichierlire {
 							+ commande2.prixTotal(Integer.parseInt(pair[qt02]), pair[plats02]);
 
 					commande1.modif(nb);
-					commande1.affichernv();
+					commande1.afficher();
 
 					commande2.setClient(pair[3]);
 					commande2.modif(0);
-					//commande2.affichernv();
+					commande2.afficher();
 
 					commande3.afficher();
 
+					commande1.afficherErreur();
+					commande2.afficherErreur();
+					commande3.afficherErreur();
 					try {
 
 						Date actuelle = new Date();
@@ -98,14 +110,17 @@ public class fichierlire {
 						System.out.println("Bienvenue chez Barette!" + "\n" + "Factures : " + "\n");
 
 						commande1.modif(nb);
-						commande1.affichernv();
+						commande1.afficher();
 
 						commande2.setClient(pair[3]);
 						commande2.modif(0);
-						//commande2.affichernv();
+						commande2.afficher();
 
 						commande3.afficher();
 
+						commande1.afficherErreur();
+						commande2.afficherErreur();
+						commande3.afficherErreur();
 					} catch (FileNotFoundException fx) {
 						System.out.println(fx);
 					}
@@ -114,6 +129,10 @@ public class fichierlire {
 					commande1.afficher();
 					commande2.afficher();
 					commande3.afficher();
+
+					commande1.afficherErreur();
+					commande2.afficherErreur();
+					commande3.afficherErreur();
 					try {
 
 						Date actuelle = new Date();
@@ -129,6 +148,9 @@ public class fichierlire {
 						commande2.afficher();
 						commande3.afficher();
 
+						commande1.afficherErreur();
+						commande2.afficherErreur();
+						commande3.afficherErreur();
 					} catch (FileNotFoundException fx) {
 						System.out.println(fx);
 					}

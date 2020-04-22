@@ -49,7 +49,7 @@ public class tess3 {
 							+ commande3.prixTotal(Integer.parseInt(pair[qt03]), pair[plats03]);
 					commande1.afficher();
 					commande2.modif(nb);
-					commande2.affichernv();
+					commande2.afficher();
 					commande3.setClient(pair[4]);
 					commande2.modif(0);
 
@@ -66,7 +66,7 @@ public class tess3 {
 						System.out.println("Bienvenue chez Barette!" + "\n" + "Factures : " + "\n");
 						commande1.afficher();
 						commande2.modif(nb);
-						commande2.affichernv();
+						commande2.afficher();
 						commande3.setClient(pair[4]);
 						commande2.modif(0);
 

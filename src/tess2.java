@@ -55,7 +55,7 @@ public class tess2 {
 	public void affichernv() {
 
 		Commandes tes = new Commandes("wer","dsf",5);
-		tes.affichernv();
+		tes.afficher();
 
 	}
 }
