@@ -86,8 +86,8 @@ public class Commandes {
 			df.setMaximumFractionDigits(2); // arrondi à 2 chiffres apres la virgules
 			df.setMinimumFractionDigits(2);
 			df.setDecimalSeparatorAlwaysShown(true);
-			System.out.print("\n Les erreurs sont : \n" + this.client + "\t" + df.format(modif(0))
-					+ "$ taxes incluses" + "\n");
+			System.out.print(
+					"\n Les erreurs sont : \n" + this.client + "\t" + df.format(modif(0)) + "$ taxes incluses" + "\n");
 
 		}
 
